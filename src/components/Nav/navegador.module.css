@@ -1,0 +1,14 @@
+.Nav {
+    background: linear-gradient(rgb(45, 223, 9), rgb(50, 75, 52));
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid red;
+}
+
+.h1 {
+    font-family: "rick";
+    font-size: 3em;
+    margin-right: 20%;
+}
+

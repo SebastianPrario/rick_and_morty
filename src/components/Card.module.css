@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.div { 
+    background-image: url("../imagenes/rick-e-morty-1-890x466.jpg")   ;
+    background-blend-mode:color-burn ;
+    width: 20%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-color: red blue green;
+    border-width: 5px 5px 5px 5px;
+    border-style: solid;
+    border-radius: 10%;
+       
+
+   
+} 
+
+.button {
+   
+  background: #0d5a03; /* color de fondo */
+  color: #e7e6f0; /* color de fuente */
+  border: 2px solid #4741d7; /* tamaño y color de borde */
+  border-radius: 50%;
+  padding: 16px 20px;
+   position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.button:hover {
+  color: #080808; /* color de fuente hover */
+}
+.button:after {
+  content: "";
+  background: #cdf712; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.button:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+
+
+.h2 {
+    font-family: 'Rick';
+    font-size: 3em;
+    background-image: url('../imagenes/rick-and-morty-quotes-header.jpg');
+    border-radius: 20%;
+    padding: 1%;
+    text-align: center;
+}
+.image {
+    order: -1;
+    margin:2%;
+    width: 90%;
+    border-radius: 20px;
+    border: 7px solid rgb(45, 84, 190);
+ 
+    
+      
+}
+
+.h3 {
+    background-color: #0fec21;
+    padding: 3%;
+    border-radius: 50%;
+    font-family: 'Covered By Your Grace';
+}
+.h4 {
+   
+ }

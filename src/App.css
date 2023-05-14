@@ -1,0 +1,15 @@
+.App {
+   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  background-image: url("./imagenes/images.jpg");
+
+   
+}
+
+@font-face {
+  font-family: 'rick';
+  src: url('./font/get-schwifty.ttf');
+}
