@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.div { 
+   
+    background-image: url(../../imagenes/812062.png);
+    height: 30em;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:left 10%;
+    border-color: red blue green;
+    border-width: 5px 5px 5px 5px;
+    border-style: solid;
+    border-radius: 10%;
+    background-blend-mode:luminosity ;
+    
+    
+
+  @media only screen and (max-width: 400px) {
+    widht: 100px
+      
+  }
+    
+  }
+
+
+
+
+.h1 {
+  
+    font-family: 'Rick';
+    font-size: 2em;
+    border-radius: 20%;
+    padding: 5%;
+    text-align: center;
+}
+.image {
+    margin-left: 50px;
+    border: #0fec21 solid 10px;
+    border-radius: 10%;
+      
+}
+
+
+
+
+.div2 {
+    width: 20%;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2em ;
+    font-style: oblique;
+    
+}

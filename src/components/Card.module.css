@@ -13,9 +13,29 @@
     border-style: solid;
     border-radius: 10%;
        
+  @media (max-width: 400px) {
+     
+     font-size: small;
+     text-align: cente;
+    
+
+
+  }  
+
+
+      
+  }
+    
+  
 
    
-} 
+
+
+.div :hover{
+  transform: scale(1.15)
+}
+
+
 
 .button {
    
@@ -53,17 +73,33 @@
   bottom: 0;
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
+
+  @media (max-width: 400px) {
+     
+    width:70%;
+
+
+  }  
+
 }
 
 
 
 .h2 {
     font-family: 'Rick';
-    font-size: 3em;
+    font-size: 2em;
     background-image: url('../imagenes/rick-and-morty-quotes-header.jpg');
     border-radius: 20%;
     padding: 1%;
     text-align: center;
+
+    @media (max-width: 400px) {
+     
+      width:70%;
+      font-size:10px;
+  
+  
+    }  
 }
 .image {
     order: -1;
@@ -72,16 +108,32 @@
     border-radius: 20px;
     border: 7px solid rgb(45, 84, 190);
  
+  @media (max-width: 400px) {
+     
+     width:70%;
+     text-align:center;
+ 
+ 
+   }  
     
       
 }
 
+
+
 .h3 {
     background-color: #0fec21;
+    text-align: left;
     padding: 3%;
     border-radius: 50%;
     font-family: 'Covered By Your Grace';
+
+    @media (max-width: 400px) {
+     
+      font-size: small;
+      text-align: center;
+ 
+ 
+   }  
 }
-.h4 {
-   
- }
+

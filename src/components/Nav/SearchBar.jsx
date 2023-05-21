@@ -10,6 +10,7 @@ export default function SearchBar(props) {
    function handleChange(event) { setIde(event.target.value)}
 
    return (
+      
       <div className={style.div}>
          <p className={style.id}>ID CARD: </p>
          <input type="text" className={style.input}onChange={handleChange} /> 

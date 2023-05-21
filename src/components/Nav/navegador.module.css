@@ -1,14 +1,50 @@
-.Nav {
-    background: linear-gradient(rgb(45, 223, 9), rgb(50, 75, 52));
-    width: 100%;
-    justify-content: center;
+.Nav {   
+    background: linear-gradient(rgb(174, 237, 162), rgb(50, 75, 52));
+    width: 150%;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    border: 10px solid red;
-}
+    border: 10px solid red; 
+}    
+
+
 
 .h1 {
     font-family: "rick";
     font-size: 3em;
-    margin-right: 20%;
+    margin-right: 10%;
+
+
+
 }
 
+.div2 {
+  
+  flex-direction: column;
+  width:  15%;
+
+  
+}
+
+.button {
+    width: 26%;
+    margin: 10%;
+    padding: 10px;
+    height: 50px;
+    border-radius: 10%;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(197, 188, 58);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    order: -1;
+
+
+ 
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: rgb(248, 247, 247);
+}
