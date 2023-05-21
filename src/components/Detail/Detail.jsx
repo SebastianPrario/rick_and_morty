@@ -30,10 +30,10 @@ return (
             <div className={style.div2}>
                 {character.name ?
                 (<>
-                <p>{character.status}</p>
-                <p>{character.species}</p>
-                <p>{character.origin.name}</p>
-                <p>{character.gender}</p>
+                <p>Status:{character.status}</p>
+                <p>Species:{character.species}</p>
+                <p>Origin:{character.origin.name}</p>
+                <p>Gender:{character.gender}</p>
                  </>)
                   : (<h1>Loading...</h1>)  // se pone el if por la demora 
                         

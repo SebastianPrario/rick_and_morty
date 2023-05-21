@@ -12,7 +12,7 @@ import Form from './components/Form/Form'
 function App() {
 
    const [characters,setCharacters] = useState ([])
-   
+   const [app,setApp] = useState('App')
    function onSearch(id) { 
       if (characters.find((char) => char.id==id)) {return alert("personaje repetido")}
       else {axios(`https://rickandmortyapi.com/api/character/${id}`).then(( { data }) => {
@@ -37,20 +37,26 @@ function App() {
    const EMAIL = 'seba@seba.com';
    const PASSWORD = '123456'
    
-   function login(userData) {
+   function login(userData,app) {
         if (userData.password===PASSWORD && userData.email===EMAIL) {
-             setAccess(true);
-             navigate('/home');
+            setApp('App1') 
+            setAccess(true);
+            navigate('/home');
+          
         } else alert( 'credenciales incorrectas')
          
    }
 
 useEffect(() => {
             !access && navigate('/'); //si access es falso nos manda al home.hace si no te logueaste no puedes pasar por ninguna otra ruta
+         
          }, [access]);
 
+
+
+
    return ( 
-      <div className='App'>
+      <div className={app}>
         { location.pathname!=='/' && <Nav className='Nav' onSearch={onSearch} /> }
         <Routes>         
          <Route path='/home' element={<Cards  characters={characters} onClose={onClose}/>}/>

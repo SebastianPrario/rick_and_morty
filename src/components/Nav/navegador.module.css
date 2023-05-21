@@ -1,10 +1,10 @@
 .Nav {   
     background: linear-gradient(rgb(174, 237, 162), rgb(50, 75, 52));
-    width: 150%;
+    width: 100%;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    border: 10px solid red; 
+    border: 1px solid red; 
 }    
 
 
