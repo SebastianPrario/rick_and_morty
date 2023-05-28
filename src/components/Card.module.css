@@ -4,7 +4,7 @@
     background-image: url("../imagenes/rick-e-morty-1-890x466.jpg")   ;
     background-blend-mode:color-burn ;
     width: 20%;
-    margin: 1%;
+    margin-top: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;

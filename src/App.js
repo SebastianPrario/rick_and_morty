@@ -15,7 +15,7 @@ import { removeFav } from './redux/actions';
 function App({removeFavorite}) {
    
    const [characters,setCharacters] = useState ([])
-   const [app,setApp] = useState('App')
+   
    function onSearch(id) { 
       if (characters.find((char) => char.id==id)) {return alert("personaje repetido")}
       else {axios(`https://rickandmortyapi.com/api/character/${id}`).then(( { data }) => {
@@ -41,12 +41,11 @@ function App({removeFavorite}) {
    const location = useLocation()
    const navigate= useNavigate()
    const [access,setAccess] = useState(false)
-   const EMAIL = '1';
-   const PASSWORD = '1'
+   const EMAIL = 'email@email.com';
+   const PASSWORD = 'pass1234'
    
    function login(userData,app) {
         if (userData.password===PASSWORD && userData.email===EMAIL) {
-            setApp('App1') 
             setAccess(true);
             navigate('/home');
           
@@ -63,9 +62,10 @@ useEffect(() => {
 
 
    return ( 
-      <div className='global' >
-         {location.pathname!=='/' && <Nav onSearch={onSearch} /> }
-         <div className={app}>
+      <div >
+        
+         <div className='app'>
+           {location.pathname!=='/' && <Nav onSearch={onSearch} /> }
             <Routes>         
                <Route path='/home' element={<Cards  characters={characters} onClose={onClose}/>}/>
                <Route path='/about' element={<About/>} />

@@ -28,9 +28,9 @@ return (
         <div className={style.div}>
             <img src={imagen} alt="rick and morty" className={style.img} />
             <form className={style.form} onSubmit={handleSubmit}>
-            <input type="text" name="email" placeholder="email" value={userData.email} onChange={(event)=>handleChange(event)}/>
+            <input type="text" name="email" placeholder="email@email.com" value={userData.email} onChange={(event)=>handleChange(event)}/>
             <p>{error.email}</p>
-            <input type="password" name="password" placeholder="password" value={userData.password} onChange={(event)=>handleChange(event)}/>
+            <input type="password" name="password" placeholder="pass1234" value={userData.password} onChange={(event)=>handleChange(event)}/>
             <p>{error.password}</p>
             <button type="submit" className={style.button}>submit</button>
 
