@@ -6,11 +6,8 @@
     background-color: brown;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    
-   
-    
-    
+    justify-content: center;   
+    padding: 0; 
 }
 .form {
     text-align: left;
@@ -30,5 +27,17 @@
     align-items: center;
     background-color: rgb(197, 188, 58);
     cursor: pointer;
+}
 
+.background {
+    height: 903px;
+    background-position: fixed;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image:  url(../../imagenes/4ea7fb833c63a4ea0b0fb696c5919dd7.png);
+}
+
+.img {
+    width: 100%;
+    margin: 0 auto;
 }

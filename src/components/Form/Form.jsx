@@ -24,22 +24,19 @@ const handleSubmit = (event) => {
  }
 
 return (
+    <div className={style.background}>
+        <div className={style.div}>
+            <img src={imagen} alt="rick and morty" className={style.img} />
+            <form className={style.form} onSubmit={handleSubmit}>
+            <input type="text" name="email" placeholder="email" value={userData.email} onChange={(event)=>handleChange(event)}/>
+            <p>{error.email}</p>
+            <input type="password" name="password" placeholder="password" value={userData.password} onChange={(event)=>handleChange(event)}/>
+            <p>{error.password}</p>
+            <button type="submit" className={style.button}>submit</button>
 
-<div className={style.div}>
-<img src={imagen} alt="rick and morty"/>
-<form className={style.form} onSubmit={handleSubmit}>
-<label htmlFor="email">email:</label>
-<input type="text" name="email" value = {userData.email} onChange={(event)=>handleChange(event)}/>
-<p>{error.email}</p>
-<label htmlFor="password">password:</label>
-<input type="password" name="password" value={userData.password} onChange={(event)=>handleChange(event)}/>
-<p>{error.password}</p>
-<button type="submit" className={style.button}>submit</button>
-
-</form>
-
+            </form>
+        </div>
 </div>
-
 
 
 )

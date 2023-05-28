@@ -5,9 +5,11 @@ export default function Cards(props) {
   
    return (
       
-   <div className='style.div'>
+   <div className={style.div}>
    {props.characters.map(({id,name,species,gender,image}) => {
-         return <Card 
+         return (
+     
+         <Card 
          key = {id}
          id =  {id}
          name = {name}
@@ -15,7 +17,8 @@ export default function Cards(props) {
          gender = {gender}
          image={image}
          onClose={props.onClose}
-           />
+         
+           />)
       })
    }
 
