@@ -5,9 +5,10 @@
     background-image: url(../../imagenes/812062.png);
     width: 70%;
     height: 20%;
-    margin-left: 20%;
+    margin-left: 10%;
+    margin-top: 14%;
     display: flex;
-    flex-direction: rown;
+    
     justify-content: center;
     padding:left 10%;
     border-color: red blue green;
