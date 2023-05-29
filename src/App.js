@@ -62,10 +62,11 @@ useEffect(() => {
 
 
    return ( 
-      <div >
-        
-         <div className='app'>
+      <div className='app'>
+         <nav >
            {location.pathname!=='/' && <Nav onSearch={onSearch} /> }
+         </nav>
+         <div>
             <Routes>         
                <Route path='/home' element={<Cards  characters={characters} onClose={onClose}/>}/>
                <Route path='/about' element={<About/>} />

@@ -1,14 +1,4 @@
-
-.div {
-  flex-wrap: wrap;
-  order: 1;
-
-  
-  
-
-}
 .selectores {
-  padding-top: 200px;
   position: fixed;
-  order: 1;
+  margin-top: 11.5%;
 }
