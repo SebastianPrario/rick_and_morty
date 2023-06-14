@@ -18,7 +18,7 @@ function App({removeFavorite}) {
    
    function onSearch(id) { 
       if (characters.find((char) => char.id==id)) {return alert("personaje repetido")}
-      else {axios(`https://rickandmortyapi.com/api/character/${id}`).then(( { data }) => {
+      else {axios(`http://localhost:3001/onsearch/${id}`).then(( { data }) => {
      
       if (data.name) {
          setCharacters((oldChars) => [...oldChars, data]);
@@ -31,11 +31,10 @@ function App({removeFavorite}) {
    }  
 
    function onClose(ido) {
-   console.log(removeFavorite)
-      const filtro = characters.filter((personajes) => personajes.id !== ido)
+    const filtro = characters.filter((personajes) => personajes.id !== ido)
     setCharacters(filtro);
     removeFavorite(ido)
-   console.log(removeFavorite)
+ 
     // filtro retorna una array nuevo  donde el personaje que tenia el id ya no esta
    }
    const location = useLocation()

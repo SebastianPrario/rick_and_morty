@@ -9,10 +9,11 @@ export default function Detail() {
 
 const [character,setCharacter] = useState ([])
  const params = useParams()
-
-useEffect(() => {   
+ const par = JSON.parse(params.detailid)
+ console.log(par)
+useEffect(() => {  
  
-    axios(`https://rickandmortyapi.com/api/character/${params.detailid}`).then(({ data }) => {
+    axios(`http://localhost:3001/detail/${par}`).then(({ data }) => {
 
        if (data.name) {
           setCharacter(data);
