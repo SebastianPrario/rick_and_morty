@@ -1,30 +1,33 @@
-const http = require('http');
-const fs = require ("fs")
-const getCharById = require ('./controllers/getCharById.js')
-const getCharDetail = require ('./controllers/getCharDetail')
+const express = require('express');
+ const mainRouter = require ('./routes/')
+const {Router} = require ('express')
 
 
-http
-    .createServer(function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-     const {url} = req;
-    if ( url.includes("onsearch")) {
-             
-      const ido= (url.split("/").at(-1));
-          
-         
-      getCharById(res,ido)
-      
-    }
-    if ( url.includes("detail")) {
-             
-        const ido= (url.split("/").at(-1));
-            
-           
-        getCharDetail(res,ido)
-        
-      }
-  
+const server = express ();
+
+const PORT = 3001;
+
+server.listen(PORT, () => {
+console.log ('server ready')
+
 })
-    .listen(3001,"localhost");
-  
+
+server.use(express.json())
+
+server.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header(
+     'Access-Control-Allow-Headers',
+     'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  res.header(
+     'Access-Control-Allow-Methods',
+     'GET, POST, OPTIONS, PUT, DELETE'
+  );
+  next();
+});
+
+
+server.use("/rickandmorty",mainRouter)
+

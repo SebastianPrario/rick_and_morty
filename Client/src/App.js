@@ -16,19 +16,17 @@ function App({removeFavorite}) {
    
    const [characters,setCharacters] = useState ([])
    
-   function onSearch(id) { 
+   const onSearch = async (id) => { 
       if (characters.find((char) => char.id==id)) {return alert("personaje repetido")}
-      else {axios(`http://localhost:3001/onsearch/${id}`).then(( { data }) => {
-     
-      if (data.name) {
-         setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
+      else
+      try {
+         const response =  await axios.get(`http://localhost:3001/rickandmorty/characters/${id}`)
+         const data = response.data
+         if (data.name) { setCharacters((oldChars) => [...oldChars, data]);
+         } else { window.alert('¡No hay personajes con este ID!');
          }
-      }).catch(()=> ( TypeError(alert('No hay Personaje con ese ID')))
-       );
+      } catch (error){alert('¡No hay personajes con este ID!')}
    }
-   }  
 
    function onClose(ido) {
     const filtro = characters.filter((personajes) => personajes.id !== ido)
@@ -37,28 +35,28 @@ function App({removeFavorite}) {
  
     // filtro retorna una array nuevo  donde el personaje que tenia el id ya no esta
    }
+
    const location = useLocation()
    const navigate= useNavigate()
    const [access,setAccess] = useState(false)
-   const EMAIL = 'email@email.com';
-   const PASSWORD = 'pass1234'
+
    
-   function login(userData,app) {
-        if (userData.password===PASSWORD && userData.email===EMAIL) {
-            setAccess(true);
-            navigate('/home');
-          
-        } else alert( 'credenciales incorrectas')
-         
-   }
+   async function login(userData) {
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      try {
+         const { email, password } = userData;
+         const response = await axios(URL + `?email=${email}&password=${password}`)
+         const data = response.data
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home')
+      } catch (error) {console.log (error)};
+   };
+   
 
-useEffect(() => {
-            !access && navigate('/'); //si access es falso nos manda al home.hace si no te logueaste no puedes pasar por ninguna otra ruta
-         
-         }, [access]);
-
-
-
+   useEffect(() => {
+   !access && navigate('/'); //si access es falso nos manda al home.hace si no te logueaste no puedes pasar por ninguna otra ruta
+   }, [access]);
 
    return ( 
       <div className='app'>

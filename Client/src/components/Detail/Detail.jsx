@@ -13,7 +13,7 @@ const [character,setCharacter] = useState ([])
  console.log(par)
 useEffect(() => {  
  
-    axios(`http://localhost:3001/detail/${par}`).then(({ data }) => {
+    axios(`http://localhost:3001/rickandmorty/characters/${par}`).then(({ data }) => {
 
        if (data.name) {
           setCharacter(data);
