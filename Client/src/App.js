@@ -42,10 +42,10 @@ function App({removeFavorite}) {
 
    
    async function login(userData) {
-      const URL = 'http://localhost:3001/rickandmorty/login/';
+      const URL = 'http://localhost:3001/rickandmorty/login';
       try {
          const { email, password } = userData;
-         const response = await axios(URL + `?email=${email}&password=${password}`)
+         const response = await axios.get(URL + `?email=${email}&password=${password}`)
          const data = response.data
          const { access } = data;
          setAccess(data);

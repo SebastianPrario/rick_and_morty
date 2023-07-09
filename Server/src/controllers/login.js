@@ -1,17 +1,15 @@
-const users = require ('../utils/users.js')
+const {User} = require ('../DB_connection')
 
 
+const login = async (email,password) => {
+    if (!email || !password) throw Error ('Faltan datos para validar') 
+    const users = await User.findOne({
+         where: {email: email},
+        })
+    if (!users) throw Error ('Usuario no Encontrado')
+    if (users.password !== password) throw Error ('Contraseña incorrecta')
 
-const logins =  (req,res) => {
-   const {email , password} = req.query;
-   const usuario = users.find( elem => elem.email === email)
-   if (usuario && usuario.password === password) {
-    res.status(200).json({access: 'true'})
-    }
-    else { res.status(200).json({access: false})}
-};
+    return {access: true}
+}
 
-
-
-
-module.exports = logins
+module.exports = login

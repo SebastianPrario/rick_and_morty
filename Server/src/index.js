@@ -1,16 +1,20 @@
 const express = require('express');
  const mainRouter = require ('./routes/')
 const {Router} = require ('express')
-
+const { conn } = require('./DB_connection')
 
 const server = express ();
-
 const PORT = 3001;
 
-server.listen(PORT, () => {
-console.log ('server ready')
+conn
+.sync({ force : false}) 
+.then( () => {
+   server.listen(PORT, () => {
+   console.log ('server ready')
+   })
+   })
+.catch((err) => console.log(err))
 
-})
 
 server.use(express.json())
 
