@@ -2,23 +2,20 @@
 
 .div { 
    
-    background-image: url(../../imagenes/812062.png);
     width: 70%;
-    height: 20%;
+    height: 30%;
     margin-left: 10%;
-    margin-top: 14%;
+    margin-top: 15%;
     display: flex;
-    
-    justify-content: center;
     padding:left 10%;
     border-color: red blue green;
-    border-width: 5px 5px 5px 5px;
+    border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-radius: 10%;
-    background-blend-mode:luminosity ;
+    border-color: #0fec21;
+    background-image: url(../../imagenes/812062.png);
+    background-size: cover;
     
-    
-
   @media only screen and (max-width: 400px) {
     widht: 100px
       
@@ -33,15 +30,16 @@
   
     font-family: 'Rick';
     font-size: 2em;
-    border-radius: 20%;
-    padding: 5%;
-    text-align: center;
+    margin-top: 0.5%;
+    margin-left: -35%;
+    position:absolute;
+    color:bisque;
+    
 }
 .image {
-    margin: 50px;
-    width: 30%;
-    height: 30%;
-    border: #0fec21 solid 10px;
+    margin-top: 6%;
+    margin-bottom: 1%;
+    border: #0fec21 solid 1px;
     border-radius: 10%;
       
 }
@@ -50,10 +48,11 @@
 
 
 .div2 {
-    width: 20%;
+    width: 30%;
     flex-direction: column;
     text-align: center;
     font-size: 2em ;
     font-style: oblique;
-    
+    background-color: blanchedalmond;
+   
 }

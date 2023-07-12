@@ -7,7 +7,7 @@ import { filterCards,orderCards , todos } from "../../redux/actions";
 import  style from './favorites.module.css'
 
 
-const Favorites =  ({props,myFavorites}) => {
+const Favorites =  ({myFavorites}) => {
    const dispatch = useDispatch();
 
    const close = (id) => 
