@@ -6,10 +6,8 @@
   flex-direction: column;
   justify-content:flex-start ;
   background-image: url('./imagenes/YHAUBUYW75FZVLG4Z4WL5S6LMY.jpg');
-  background-size: cover;
-
-  background-attachment: fixed;
-  
+ 
+   
 }
 
 @font-face {

@@ -8,11 +8,12 @@ export const FILTER_CARDS = "FILTER_CARDS"
 export const ORDER_CARDS = "ORDER_CARDS"
 export const TODOS = "TODOS"
 
-export const addfav =  (character) => {
-    const endpoint = `${BASE_URL}/rickandmorty/fav`;
+export const addfav =   (character) => {
+     const endpoint = `${BASE_URL}/rickandmorty/fav`;
     try{
         return async (dispatch) => {
         const {data} = await  axios.post(endpoint, character)
+        console.log (data)
         return dispatch({
              type: 'ADD_FAV',
              payload: data,
