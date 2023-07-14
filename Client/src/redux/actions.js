@@ -1,4 +1,6 @@
 import axios from 'axios'
+import  BASE_URL  from '../false_env'
+
 
 export const ADD_FAV = "ADD_FAV"
 export const REMOVE_FAV = "REMOVE_FAV"
@@ -7,7 +9,7 @@ export const ORDER_CARDS = "ORDER_CARDS"
 export const TODOS = "TODOS"
 
 export const addfav =  (character) => {
-    const endpoint = 'http://localhost:3001/rickandmorty/fav';
+    const endpoint = `${BASE_URL}/rickandmorty/fav`;
     try{
         return async (dispatch) => {
         const {data} = await  axios.post(endpoint, character)
@@ -20,7 +22,7 @@ export const addfav =  (character) => {
 
 
 export const removeFav = (id) => {
-    const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
+    const endpoint = `${BASE_URL}/rickandmorty/fav/` + id;
     return  async (dispatch) => {
         try {
             const response = await  axios.delete(endpoint)

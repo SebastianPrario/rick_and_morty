@@ -1,5 +1,4 @@
 import './App.css';
-import Card from './components/Card.jsx';
 import Cards from './components/Cards.jsx'
 import Nav from './components/Nav/navegador.jsx'
 import { useState , useEffect } from 'react';
@@ -11,6 +10,8 @@ import { Route , Routes , useLocation, useNavigate} from 'react-router-dom';
 import Form from './components/Form/Form'
 import { connect } from 'react-redux';
 import { removeFav } from './redux/actions';
+import BASE_URL  from './false_env';
+
 
 function App({removeFavorite}) {
    
@@ -20,7 +21,7 @@ function App({removeFavorite}) {
       if (characters.find((char) => char.id==id)) {return alert("personaje repetido")}
       else
       try {
-         const response =  await axios.get(`http://localhost:3001/rickandmorty/characters/${id}`)
+         const response =  await axios.get(`${BASE_URL}/rickandmorty/characters/${id}`)
          const data = response.data
          if (data.name) { setCharacters((oldChars) => [...oldChars, data]);
          } else { window.alert('¡No hay personajes con este ID!');
@@ -42,7 +43,7 @@ function App({removeFavorite}) {
 
    
    async function login(userData) {
-      const URL = 'http://localhost:3001/rickandmorty/login';
+      const URL = `${BASE_URL}/rickandmorty/login`;
       try {
          const { email, password } = userData;
          const response = await axios.get(URL + `?email=${email}&password=${password}`)
