@@ -3,6 +3,7 @@ import axios from "axios";
 import style from "./Detail.module.css"
 import { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
+import  BASE_URL from './../../false_env'
 
 
 export default function Detail() {
@@ -13,7 +14,7 @@ const [character,setCharacter] = useState ([])
  console.log(par)
 useEffect(() => {  
  
-    axios(`http://localhost:3001/rickandmorty/characters/${par}`).then(({ data }) => {
+    axios(`${BASE_URL}/rickandmorty/characters/${par}`).then(({ data }) => {
 
        if (data.name) {
           setCharacter(data);
