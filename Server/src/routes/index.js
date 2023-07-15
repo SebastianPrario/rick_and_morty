@@ -4,7 +4,7 @@ const {postUser} = require ('../controllers/postUser')
 const login = require ('../controllers/login')
 const postFav= require ('..//controllers/postFavorite')
 const deleteFav= require ('..//controllers/deleteFav')
-
+const getFav= require ('..//controllers/getFav')
 
 
 const mainRouter = Router()
@@ -13,7 +13,7 @@ const mainRouter = Router()
 
 mainRouter.get("/characters/:id",async (req,res) => {
   try {
-  
+     
     const ido = req.params.id
     const {id,image,name,gender,status,origin,species} =  await getCharById(ido)
    
@@ -43,6 +43,12 @@ mainRouter.get("/login" , async (req,res) => {
   
  mainRouter.post("/fav", (req,res) => {
    postFav(req,res)
+
+})
+
+mainRouter.get("/fav", (req,res) => {
+  console.log('entro aca')
+  getFav(req,res)
 
 })
 

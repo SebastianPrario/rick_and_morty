@@ -1,7 +1,7 @@
 import axios from 'axios'
 import  BASE_URL  from '../false_env'
 
-
+export const GET_FAV = "GET_FAV"
 export const ADD_FAV = "ADD_FAV"
 export const REMOVE_FAV = "REMOVE_FAV"
 export const FILTER_CARDS = "FILTER_CARDS"
@@ -19,6 +19,19 @@ export const addfav =   (character) => {
              payload: data,
           })}
     } catch (error) {console.log (error)};
+};
+
+export const getfav =   () => {
+    const endpoint = `${BASE_URL}/rickandmorty/fav`;
+   try{
+       return async (dispatch) => {
+       const {data} = await  axios.get(endpoint)
+       console.log (data)
+       return dispatch({
+            type: 'ADD_FAV',
+            payload: data,
+         })}
+   } catch (error) {console.log (error)};
 };
 
 

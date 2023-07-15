@@ -1,5 +1,5 @@
 require('dotenv').config();  // para trabajar con las variables de entorno
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize } = require('sequelize');
 const { DB_USER, DB_PASSWORD, DB_HOST,DB_PORT , BDD, DB_VIRTUAL} = process.env; // se hace destructuring de env
 const FavoriteModel = require ('./models/Favorite');
 const UserModel = require ('./models/User');
@@ -9,9 +9,10 @@ const UserModel = require ('./models/User');
 // Recuerda pasarle la información de tu archivo '.env'.
 
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
-//`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${BDD}`,
+//,
+const ruta = DB_VIRTUAL ?  DB_VIRTUAL : `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${BDD}`
 
-const sequelize = new Sequelize(DB_VIRTUAL,
+const sequelize = new Sequelize(ruta,
    { logging: false, native: false } //logging borra de la consola la instruccion sequalize
 );
 

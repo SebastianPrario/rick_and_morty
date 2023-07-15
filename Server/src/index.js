@@ -10,7 +10,7 @@ conn
 .sync({ force : false}) 
 .then( () => {
    server.listen(PORT, () => {
-   console.log ('server ready')
+   console.log ('server ready '+PORT)
    })
    })
 .catch((err) => console.log(err))

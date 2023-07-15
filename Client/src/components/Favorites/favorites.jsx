@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect, useDispatch } from "react-redux";
 import Card from "../Card";
-import { removeFav } from '../../redux/actions';
+import { removeFav, getfav } from '../../redux/actions';
 import { useState } from "react";
 import { filterCards,orderCards , todos } from "../../redux/actions";
 import  style from './favorites.module.css'
 
 
 const Favorites =  ({myFavorites}) => {
+   
    const dispatch = useDispatch();
-
+   useEffect(() => {dispatch(getfav())},[])
    const close = (id) => 
        dispatch(removeFav(id))
    
